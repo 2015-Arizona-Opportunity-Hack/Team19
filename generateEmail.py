@@ -18,17 +18,21 @@ def sendEmail(email, address):
 
     msg = MIMEText(email, 'html')
     me = "schand31@asu.edu"
-    them = "swetha.baskaran@asu.edu"
     # me == the sender's email address
-    # you == the recipient's email address
     msg['Subject'] = 'Thank You note from SupportMyClub'
     msg['From'] = me
-    msg['To'] = them
+    msg['To'] = address
 
     # Send the message via our own SMTP server, but don't include the
     # envelope header.
-    s = smtplib.SMTP('localhost')
-    s.sendmail(me, [them], msg.as_string())
-    s.quit()
+    server = smtplib.SMTP('smtp.gmail.com', 587)
 
+#Next, log in to the server
+    server.login("schand31", "1123581321Fs+")
+    server.sendmail(me, [address], msg.as_string())
+    server.quit()
 
+if __name__ == "__main__":
+    email = generateEmail("Swetha", "Poya yov", "http://i.forbesimg.com/media/lists/companies/google_416x416.jpg")
+    them = "swetha.baskaran@asu.edu"
+    sendEmail(email, them)
