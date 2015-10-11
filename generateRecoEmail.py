@@ -2,6 +2,7 @@ __author__ = 'saipc'
 
 import psycopg2
 from idf import *
+from generateEmail import *
 
 def generateRecoEmail(name, recommendations):
     email = """
@@ -11,7 +12,7 @@ def generateRecoEmail(name, recommendations):
 <table cellpadding="5"><tbody style="padding: 12px;" width=600>
 <tr>
 <th colspan="5">
-<img src="header2.jpg" width="600">
+<img src="http://s17.postimg.org/8g77217cf/header2.jpg" width="600">
 </th>
 </tr>
 <tr>
@@ -36,14 +37,14 @@ equipped for this school year!</p>
         ClubName = "Club: " + row[3]
         imgURL = row[5]
         # print SchoolName, ClubName, imgURL
-        rowData = """<tr><td colspan = 2><img width=150 src='""" + imgURL + """'></td><td colspan = 3><p>""" + SchoolName + """</p><p>""" + ClubName + "</p><p>Item: " + reco +"""</p></td>"""
+        rowData = """<tr><td colspan = 2  style="padding: 12px;"><img width=150 src='""" + imgURL + """'></td><td colspan = 3><p>""" + SchoolName + """</p><p>""" + ClubName + "</p><p>Item: " + reco +"""</p></td>"""
         email += rowData
     conn.commit()
 
     email += """
 <tr>
 <td colspan="5">
-<img src="footer.jpg" width="600">
+<img src="http://s17.postimg.org/y7274ajcf/footer.jpg" width="600">
 </td>
 </tr>
 </tbody>
@@ -56,10 +57,19 @@ equipped for this school year!</p>
     return email
 
 if __name__ == "__main__":
-    jsonData = json.loads(generateJson('Susan Ford'))
+    jsonData = json.loads(generateJson('Sai Pc'))
     name = jsonData[0]
     listRecoScores = jsonData[1]
     listReco = [j[1] for j in listRecoScores]
-    print name, listReco
+    # print name, listReco
     email = generateRecoEmail(name, listReco)
-    print email
+    # print email
+    if name is not None:
+        conn = psycopg2.connect(database="SMC", user="postgres", password="dragon123", host="127.0.0.1", port="5432")
+        cur = conn.cursor()
+        query = 'select "Email" from "Orders" WHERE "CustomerName" = \'%s\''
+        #print query%(name)
+        cur.execute(query%name)
+        row = cur.fetchone()
+        them = row[0]
+        sendEmail(email, them, 'New Requests of Interest to YOU!')

@@ -173,8 +173,8 @@ def calculateSimilarItems(prefs,n=10):
     for item in itemPrefs:
         #Status updates for large datasets
         c+=1
-        if c%100==0:
-            print "%d / %d" % (c, len(itemPrefs))
+        #if c%100==0:
+        #    print "%d / %d" % (c, len(itemPrefs))
         #Find the most similar items to this one
         scores = topMatches(itemPrefs,item,n=n,similarity=sim_distance)
         result[item] = scores
@@ -219,7 +219,7 @@ def generateJson(name):
         don=loadDataset2()
         for d in don:
             result3 = getRecommendedItems(pref,result2,d)
-            if("(0," not in str(result3[0:1]) and d==name):
+            if("(0," not in str(result3[0:1]) and d == name):
                 #print(str(d)+":"+str(result3[0:2]))
                 j = json.dumps([str(name),result3[0:2]])
                 return j

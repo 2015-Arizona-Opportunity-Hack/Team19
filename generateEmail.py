@@ -5,7 +5,8 @@ from email.mime.text import MIMEText
 
 def generateEmail(name, message, image):
     email = """
-<!DOCTYPE html><html><head lang="en"><meta charset="UTF-8"><title></title></head><body>
+<!DOCTYPE html><html><head lang=en><meta charset='UTF-8'><meta property='og:url' content='https://apps.facebook.com/supportmyclubapp/'>
+</head><body>""" + """
 <div class="body" width="600" style="color: #000088; font-size: 20px">
 <a style='display:block;' href='http://www.supportmyclub.org/'>
 <table cellpadding="5"><tbody style="padding: 12px;">
@@ -14,16 +15,17 @@ def generateEmail(name, message, image):
 <p>""" + message + """</p></td><td colspan='2'><img src='""" + image + """' width='200'></td></tr>
 <tr><td colspan="5"><img src="http://s17.postimg.org/y7274ajcf/footer.jpg" width="600"></td></tr>
 </td></tr></tbody></table></a>
-<p><a href=''><img src='' width='100'></a></p></div></body></html>
+<p><a href='https://www.facebook.com/sharer/sharer.php?u=https://apps.facebook.com/supportmyclubapp/'><img src='http://bitcoin-catcher.com/wp-content/uploads/2015/09/facebook-share-button.png' width='100' alt='Share on Facebook'></a></p>
+</div></body></html>
 """
     return email
 
-def sendEmail(email, address):
+def sendEmail(email, address, subject):
 
     msg = MIMEText(email, 'html')
     me = "saipc1993@gmail.com"
     # me == the sender's email address
-    msg['Subject'] = 'Thank You note from SupportMyClub'
+    msg['Subject'] = subject
     msg['From'] = me
     msg['To'] = address
 
@@ -38,6 +40,6 @@ def sendEmail(email, address):
     server.quit()
 
 if __name__ == "__main__":
-    email = generateEmail("Swetha", "Poya yov", "http://i.forbesimg.com/media/lists/companies/google_416x416.jpg")
-    them = "swetha.baskaran@asu.edu"
-    sendEmail(email, them)
+    email = generateEmail("Dilip", "Poya yov", "http://i.forbesimg.com/media/lists/companies/google_416x416.jpg")
+    them = "sndilip17@gmail.com"
+    sendEmail(email, them, 'Thank You note from SupportMyClub')
