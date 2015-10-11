@@ -22,4 +22,3 @@ with open('orders_export.csv', 'r') as csv:
                     writer.write(name + "," + productName + "," + donation +"\n")
 
             #orders[orderID] = (email, name)
-

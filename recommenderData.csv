@@ -1,4 +1,3 @@
-Billing Name,Lineitem name,Total
 Thomas Duran,Hex Drivers,28.00
 Ricardo Jimenez,Donation to Support My Club,31.00
 Ethan Cruz,Deburring Tool,14.00
@@ -11,7 +10,7 @@ Kathryn  Stewart,Glossy 3D Printer Filament,42.00
 Angela Christensen,Hobby Lobby Gift Card,50.00
 Kristopher Glocksien,Soccer Practice Balls,28.00
 Manual Order,Black Shorts,0.00
-thomas zanella,"3"" Binders",212.00
+thomas zanella,3 Binders,212.00
 Sylvia Waxman,White Soccer Socks,11.00
 Ann Miles,Soccer Practice Balls,140.00
 Manual Order,Embroidery Machine,0.00
@@ -151,7 +150,7 @@ SNR Machine Co.,180-Degree Servo Motor,104.00
 James  Armstrong,Donation to Support My Club,144.00
 Jen Jacob,Knee Pads,19.00
 Amy Armstrong,Musical Instrument Museum,0.00
-Amy Armstrong,"15"" Oven Mitts",2.00
+Amy Armstrong,15 Oven Mitts,2.00
 Jathryn Willis,Digital Camera Package,840.00
 Amy Armstrong,Baby Stroller,0.00
 Susan Ford,Donation to Most Urgent Items,375.00
@@ -169,8 +168,8 @@ Amy Armstrong,Chef Hats,0.00
 Jennifer Vollmann,Donation to Support My Club,45.00
 Kent Scribner,$25 Giftcard,350.00
 Mike Marasco,Cordless Drill,49.00
-Amy Armstrong,"Polycarbonate Sheet 0.236""",0.00
-Amy Armstrong,"Polycarbonate Sheet 0.177""",0.00
+Amy Armstrong,Polycarbonate Sheet 0.236,0.00
+Amy Armstrong,Polycarbonate Sheet 0.177,0.00
 Susan Ford,Donation to Most Urgent Items,125.00
 Mary Ann Marasco,Aprons,207.00
 Carol Clemency,$25 Giftcard,100.00
@@ -236,8 +235,8 @@ Amy Armstrong,Cat Ears Headband,0.00
 Robert Mainieri,4-Drawer Tool Cabinet,152.00
 Candice Gutierrez,Coffee Urn,86.00
 Nicole Reyes,Water Bottles,209.00
-Amy Armstrong,"15"" Oven Mitts",2.00
-Amy Armstrong,"15"" Oven Mitts",2.00
+Amy Armstrong,15 Oven Mitts,2.00
+Amy Armstrong,15 Oven Mitts,2.00
 Amy Armstrong,Gift Card - $10.00,10.00
 Outreach Support My Club,Donation to Support My Club,0.00
 Lisa Corprew,Volleyball Knee Pads,56.00
@@ -249,7 +248,7 @@ John Dallas,Sterilite 3-Drawer Wide Cart,25.00
 Eric Rodriguez,Shag Bag,35.00
 Chris Linn,Donation to Most Urgent Items,50.00
 Mary Ann Marasco,Donation to Most Urgent Items,200.00
-Rebecca Love,"NaNoWriMo YWP ""Novel Inside"" Pencil Sets",21.00
+Rebecca Love,NaNoWriMo YWP Novel Inside Pencil Sets,21.00
 John Kinney,Game Balls,119.00
 Sona Westerlund,Donation to Most Urgent Items,25.00
 Mike Marasco,Calipers,28.00
@@ -301,7 +300,7 @@ Deborah McCoy,Soccer Practice Balls - Soccer Ball,28.00
 Annie Middlemist,Camping Tent,0.00
 Amy Armstrong,Arizona Hummer Tour & Horseback Riding Field Trip Sponsorship,0.00
 Samuel Rawlins,Donation to Support My Club,65.00
-false,"Coaches Clipboard,118.00
+false,Coaches Clipboard,118.00
 Middlemist,IPAD MINI,0.00
 JOan Lowell,Donation to Support My Club,47.00
 Kaye Schmitt,Set of Two: Thread Spools,20.00
@@ -441,7 +440,7 @@ michael rudinsky,FEA State Competition Sponsorship,67.00
 Mary Collum,Donation to Support My Club,100.00
 Brent Mekosh,Morrell NASP Youth Target,53.00
 Paige Perry,Musical Instrument Museum,45.00
-Becky Wolf,"Oversize 33"" Basketball",52.00
+Becky Wolf,Oversize 33 Basketball,52.00
 Chris Linn,Donation to Support My Club,50.00
 Mary Ann Marasco,Donation to Support My Club,276.00
 Kent Scribner,Donation to Support My Club,9.00
