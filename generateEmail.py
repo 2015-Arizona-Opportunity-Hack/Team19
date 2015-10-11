@@ -6,11 +6,15 @@ from email.mime.text import MIMEText
 def generateEmail(name, message, image):
     email = """
 <!DOCTYPE html><html><head lang="en"><meta charset="UTF-8"><title></title></head><body>
-<div class="body" width="600" style="color: #000088; font-size: 20px"><table cellpadding="5"><tbody style="padding: 12px;">
-<tr><th colspan="4"><img src="http://s17.postimg.org/g2z6jnlnz/header.jpg" width="600"></th></tr>
-<tr><td colspan="2" style="padding: 12px;"><p>Dear """ + name + """,</p>
-<p>""" + message + """</p></td><td colspan='1'><img src='""" + image + """' width='200'></td></tr>
-<tr><td colspan="4"><img src="http://s17.postimg.org/y7274ajcf/footer.jpg" width="600"></td></tr></tbody></table></div></body></html>
+<div class="body" width="600" style="color: #000088; font-size: 20px">
+<a style='display:block;' href='http://www.supportmyclub.org/'>
+<table cellpadding="5"><tbody style="padding: 12px;">
+<tr><th colspan="5"><img src="http://s17.postimg.org/g2z6jnlnz/header.jpg" width="600"></th></tr>
+<tr><td colspan="3" style="padding: 12px;"><p>Dear """ + name + """,</p>
+<p>""" + message + """</p></td><td colspan='2'><img src='""" + image + """' width='200'></td></tr>
+<tr><td colspan="5"><img src="http://s17.postimg.org/y7274ajcf/footer.jpg" width="600"></td></tr>
+</td></tr></tbody></table></a>
+<p><a href=''><img src='' width='100'></a></p></div></body></html>
 """
     return email
 
