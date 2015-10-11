@@ -1,7 +1,7 @@
 # Team19
 Team19
 
-Geeks for Hire
+3 Geeks and a Nerd
 
 ## Members
 Sai Prashanth Chandramouli (schand31@asu.edu)

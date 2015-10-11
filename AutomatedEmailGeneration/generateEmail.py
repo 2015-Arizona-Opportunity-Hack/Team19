@@ -1,3 +1,8 @@
+#!/usr/bin/python2.7
+
+print "Content-type: text/html"
+print "\r\n"
+
 __author__ = 'saipc'
 
 import smtplib
@@ -42,4 +47,6 @@ def sendEmail(email, address, subject):
 if __name__ == "__main__":
     email = generateEmail("Dilip", "Poya yov", "http://i.forbesimg.com/media/lists/companies/google_416x416.jpg")
     them = "sndilip17@gmail.com"
+    print "Thank You Email successfully sent to ", them
+    print email
     sendEmail(email, them, 'Thank You note from SupportMyClub')
