@@ -1,11 +1,15 @@
 # Team19
 Team19
+
 Geeks for Hire
 
 ## Members
 Sai Prashanth Chandramouli (schand31@asu.edu)
+
 Shravan Purohit (shravan.purohit@asu.edu)
+
 Dilip Selamanthu (dselaman@asu.edu)
+
 Swetha Baskaran (sbaskar3@asu.edu)
 
 #Inspiration
