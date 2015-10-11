@@ -8,7 +8,7 @@ Sai Prashanth Chandramouli (schand31@asu.edu)
 
 Shravan Purohit (shravan.purohit@asu.edu)
 
-Dilip Selamanthu (dselaman@asu.edu)
+Dilip Selamanthulu Narendra (dselaman@asu.edu)
 
 Swetha Baskaran (sbaskar3@asu.edu)
 
@@ -24,4 +24,4 @@ social media and reduce their manual work by automating certain aspects of their
 ## Solutions implemented
 1. A fully automated email system.
 2. A recommendation system based on collaborative filtering.
-3. An appreciation system, involving Facebook APIS to perform targeted marketing.
+3. An appreciation system, involving Facebook API's to perform targeted marketing.

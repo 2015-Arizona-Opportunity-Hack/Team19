@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- Referred from https://developers.facebook.com/docs/facebook-login/web -->
+<html>
+<head>
+    <title>Support my club FB Integration</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    var map={};
+    map["AAEC at South Mountain"]="http://www.supportmyclub.org/collections/aaec-south";
+    map["Alchesay"]="http://www.supportmyclub.org/collections/alchesay-high";
+    map["Alhambra"]="http://www.supportmyclub.org/collections/alhambra-high";
+    map["Apache Junction"]="http://www.supportmyclub.org/collections/apache-junction-high";
+    map["Arcadia"]="http://www.supportmyclub.org/collections/arcadia-high";
+    map["Arizona Charter Academy"]="http://www.supportmyclub.org/collections/arizona-charter-academy";
+    map["Arizona School for the Arts"]="http://www.supportmyclub.org/collections/arizona-school-for-the-arts";
+    map["Bioscience High"]="http://www.supportmyclub.org/collections/bioscience-high";
+    map["Bostrom High"]="http://www.supportmyclub.org/collections/bostrom-high";
+    map["Camelback High"]="http://www.supportmyclub.org/collections/camelback-high";
+    map["Carl Hayden High"]="http://www.supportmyclub.org/collections/carl-hayden-high";
+    map["Casa Grande Union High"]="http://www.supportmyclub.org/collections/casa-grande-union-high";
+    map["Central High"]="http://www.supportmyclub.org/collections/central-high";
+    map["Cesar Chavez High"]="http://www.supportmyclub.org/collections/cesar-chavez-high";
+    map["Chaparral High"]="http://www.supportmyclub.org/collections/chaparral-high";
+    map["Combs High"]="http://www.supportmyclub.org/collections/combs-high";
+    map["Coolidge High"]="http://www.supportmyclub.org/collections/coolidge-high";
+    map["Copper Canyon High"]="http://www.supportmyclub.org/collections/copper-canyon-high";
+    map["Desert Edge High"]="http://www.supportmyclub.org/collections/desert-edge-high";
+    map["Desert Vista High"]="http://www.supportmyclub.org/collections/desert-vista-high";
+    map["Desiderata High"]="http://www.supportmyclub.org/collections/desiderata-high";
+    map["Educational Opportunity Center"]="http://www.supportmyclub.org/collections/educational-opportunity-center";
+    map["Estrella"]="http://www.supportmyclub.org/collections/estrella-foothills-high";
+    map["EVIT"]="http://www.supportmyclub.org/collections/evit";
+    map["Fairfax High"]="http://www.supportmyclub.org/collections/fairfax-high";
+    map["Fort Thomas High"]="http://www.supportmyclub.org/collections/fort-thomas-high";
+    map["Franklin Police and Fire High"]="http://www.supportmyclub.org/collections/franklin-police-and-fire";
+    map["Genesis Academy"]="http://www.supportmyclub.org/collections/genesis-academy";
+    map["Glendale High"]="http://www.supportmyclub.org/collections/glendale-high";
+    map["Globe High"]="http://www.supportmyclub.org/collections/globe-high";
+    map["Kellis High"]="http://www.supportmyclub.org/collections/kellis-high";
+    map["Marana High"]="http://www.supportmyclub.org/collections/marana-high";
+    map["Marcos de Niza High"]="http://www.supportmyclub.org/collections/marcos-de-niza-high";
+    map["Maryvale High"]="http://www.supportmyclub.org/collections/maryvale-high";
+    map["McClintock High"]="http://www.supportmyclub.org/collections/mcclintock-high";
+    map["Mesa High"]="http://www.supportmyclub.org/collections/mesa-high";
+    map["Metro Tech High"]="http://www.supportmyclub.org/collections/metro-tech-high";
+    map["Millennium High"]="http://www.supportmyclub.org/collections/millennium-high";
+    map["Moon Valley High"]="http://www.supportmyclub.org/collections/moon-valley-high";
+    map["Mountain View High"]="http://www.supportmyclub.org/collections/mountain-view-high";
+    map["North High"]="http://www.supportmyclub.org/collections/north-high";
+    map["Paradise Valley High"]="http://www.supportmyclub.org/collections/paradise-valley-high";
+    map["Peoria High"]="http://www.supportmyclub.org/collections/peoria-high";
+    map["Phoenix Collegiate Academy"]="http://www.supportmyclub.org/collections/phoenix-collegiate-academy";
+    map["Red Mountain High"]="http://www.supportmyclub.org/collections/red-mountain-high";
+    map["Sandra Day O'Connor High"]="http://www.supportmyclub.org/collections/sandra-day-oconnor-high";
+    map["Sierra Linda High"]="http://www.supportmyclub.org/collections/sierra-linda-high";
+    map["Skyline High"]="http://www.supportmyclub.org/collections/skyline-high";
+    map["South Mountain High"]="http://www.supportmyclub.org/collections/south-mountain-high";
+    map["Suns Diamondbacks High"]="http://www.supportmyclub.org/collections/suns-diamondbacks-high";
+    map["Tempe High"]="http://www.supportmyclub.org/collections/tempe-high";
+    map["Thunderbird High"]="http://www.supportmyclub.org/collections/thunderbird-high";
+    map["Tolleson Union High"]="http://www.supportmyclub.org/collections/tolleson-union-high";
+    map["Trevor Browne High"]="http://www.supportmyclub.org/collections/trevor-browne-high";
+    map["University High"]="http://www.supportmyclub.org/collections/university-high";
+    map["Verrado High"]="http://www.supportmyclub.org/collections/verrado-high";
+    map["Walden Grove High"]="http://www.supportmyclub.org/collections/walden-grove-high";
+    map["Washington High"]="http://www.supportmyclub.org/collections/washington-high";
+    map["Western CFA"]="http://www.supportmyclub.org/collections/western-cfa";
+    map["Westwood High"]="http://www.supportmyclub.org/collections/westwood-high";
+    map["Williams Field High"]="http://www.supportmyclub.org/collections/williams-field-high";
+
+
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            navigate();
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            FB.login(function(response) {
+                if (response.status === 'connected') {
+                    // Logged into your app and Facebook.
+                    navigate();
+                } else if (response.status === 'not_authorized') {
+                    // The person is logged into Facebook, but not your app.
+                } else {
+                    // The person is not logged into Facebook, so we're not sure if
+                    // they are logged into this app or not.
+                }
+            },{scope: 'public_profile,email,user_location,user_hometown,user_education_history'});
+        } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+        }
+    }
+
+    // This function is called when someone finishes with the Login
+    // Button.  See the onlogin handler attached to it in the sample
+    // code below.
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '531201200388813',
+            cookie     : true,  // enable cookies to allow the server to access
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.2' // use version 2.2
+        });
+
+        // Now that we've initialized the JavaScript SDK, we call
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function navigate() {
+        FB.api('/me?fields=education,location,sports,name,id', function(response) {
+            //get school name from the Graph API
+            var schoolname;
+            for(index in response.education){
+                if(response.education[index].type.toLowerCase().indexOf("school") > -1){
+                    schoolname = response.education[index].school.name;
+                }
+            }
+            //set navigation based on school
+            var navUrl = "http://www.supportmyclub.org/pages/fulfill-a-request";
+            for(var val in map){
+                if(schoolname.indexOf(val) > -1){
+                    navUrl = map[val];
+                    break;
+                }
+            }
+            top.location.href = navUrl;
+        });
+
+    }
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+<!--fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button-->
+
+
+</body>
+</html>
