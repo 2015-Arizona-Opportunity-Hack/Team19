@@ -39,13 +39,14 @@ def sendEmail(email, address, subject):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
+    #socket = server._get_socket()
     #Next, log in to the server
     server.login("saipc1993", "dragondragon")
     server.sendmail(me, [address], msg.as_string())
     server.quit()
 
 if __name__ == "__main__":
-    email = generateEmail("Dilip", "Poya yov", "http://i.forbesimg.com/media/lists/companies/google_416x416.jpg")
+    email = generateEmail("Dilip", "Hey thank you so much for giving <br>us this great opportunity", "http://i.forbesimg.com/media/lists/companies/google_416x416.jpg")
     them = "sndilip17@gmail.com"
     print "Thank You Email successfully sent to ", them
     print email
