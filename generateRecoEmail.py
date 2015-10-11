@@ -1,6 +1,7 @@
 __author__ = 'saipc'
 
 import psycopg2
+from idf import *
 
 def generateRecoEmail(name, recommendations):
     email = """
@@ -55,5 +56,10 @@ equipped for this school year!</p>
     return email
 
 if __name__ == "__main__":
-    email = generateRecoEmail('Sai', ["Sewing Machine", "Boys Team Shirts"])
+    jsonData = json.loads(generateJson('Susan Ford'))
+    name = jsonData[0]
+    listRecoScores = jsonData[1]
+    listReco = [j[1] for j in listRecoScores]
+    print name, listReco
+    email = generateRecoEmail(name, listReco)
     print email

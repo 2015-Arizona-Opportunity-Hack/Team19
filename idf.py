@@ -221,7 +221,7 @@ def generateJson(name):
             result3 = getRecommendedItems(pref,result2,d)
             if("(0," not in str(result3[0:1]) and d==name):
                 #print(str(d)+":"+str(result3[0:2]))
-                j = json.dumps(str(name),result3[0:2])
-        return j
+                j = json.dumps([str(name),result3[0:2]])
+                return j
     except Exception as detail:
         print(detail)
