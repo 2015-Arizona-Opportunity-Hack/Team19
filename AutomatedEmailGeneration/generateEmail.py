@@ -41,7 +41,7 @@ def sendEmail(email, address, subject):
     server.starttls()
     #socket = server._get_socket()
     #Next, log in to the server
-    server.login("saipc1993", "dragondragon")
+    server.login("saipc1993", "")
     server.sendmail(me, [address], msg.as_string())
     server.quit()
 
